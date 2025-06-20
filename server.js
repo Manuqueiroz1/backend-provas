@@ -90,7 +90,11 @@ app.post('/api/gerar-prova', async (req, res) => {
         res.json({ resposta: assistantMessage.content[0].text.value });
 
     } catch (e) {
-        console.error(e);
+        console.error("ERRO NO BACKEND:", e);
+if (e.response && e.response.data) {
+    console.error("OpenAI Response Error:", JSON.stringify(e.response.data, null, 2));
+}
+
         res.status(500).json({ error: 'Erro no backend: ' + e.message });
     }
 });
