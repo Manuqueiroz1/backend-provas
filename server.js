@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const OPENAI_API_KEY = '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'; // Coloque sua key AQUI! (NUNCA no frontend!)
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY; 
 
 app.post('/api/gerar-prova', async (req, res) => {
     try {
