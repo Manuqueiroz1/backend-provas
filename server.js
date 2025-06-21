@@ -42,7 +42,7 @@ app.post('/api/gerar-prova', async (req, res) => {
         // 3. Executa o assistant
         const runResp = await axios.post(
             `https://api.openai.com/v1/threads/${thread.id}/runs`,
-            { assistant_id: 'ASSISTANT_ID' }, // Coloque seu Assistant ID aqui
+            { assistant_id: 'asst_Bj27krTtbaCLJSgNpzYiMb18' }, // Coloque seu Assistant ID aqui
             {
                 headers: {
                     'Authorization': `Bearer ${OPENAI_API_KEY}`,
